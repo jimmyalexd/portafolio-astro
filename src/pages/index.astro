@@ -6,6 +6,64 @@ import Layout from '../layouts/Layout.astro';
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+
+<Layout title="Inicio | Mi Portafolio">
+	<section>
+		<div class="section-welcome">
+			<div class="welcome-info">
+				<h1>Jimmy Carreño</h1>
+				<h2>Desarrollador FullStack</h2>
+				<a href="/cv/Jimmy-Carreno-CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary">
+					Ver CV
+				  </a>
+			</div>
+			<picture>
+				<img src="/public/images/welcome-desarrollo.png" alt="">
+			</picture>
+		</div>
+	</section>	
 </Layout>
+
+<style>
+	.section-welcome {
+		min-height: calc(100vh - 135px);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		color: white;	
+		padding: 0 40px;		
+	}
+
+	.section-welcome h1 {
+		font-size: 2rem;
+		color: black;
+	}
+
+	.section-welcome h2 {
+		color: #0d6efd;
+	}
+
+	.section-welcome a {
+		color: black;
+		text-decoration: none;
+		background-color: transparent;
+		border: 1px solid #0d6efd;
+		border-radius: 24px;
+		padding: 8px;
+		transition: background-color 0.4s ease;
+	}
+
+	.section-welcome a:hover {
+		background-color: #0d6efd;
+		cursor: pointer;
+	}
+
+	welcome-info {
+		align-items: center;
+	}
+
+	picture img {
+		align-items: center;
+		width: 400px;		
+	}	
+</style>
