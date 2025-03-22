@@ -1,4 +1,7 @@
 ---
+import "../styles/global.css";
+import BootstrapClientScript from "../components/BootstrapClientScript.jsx";
+
 const { title = 'Mi Portafolio' } = Astro.props;
 ---
 
@@ -8,31 +11,53 @@ const { title = 'Mi Portafolio' } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-
-	<!-- Bootstrap CSS CDN -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkI6wctkeq5aCkgy9Yp4mPikp/2qgUF0W8ayhr0TvOEV8yYF"
-      crossorigin="anonymous"
-    />
   </head>
   <body>
     <header>
-      <nav>
-        <ul>
-          <li><a href="/">Inicio</a></li>
-		  <span>/</span>
-          <li><a href="#about">Sobre mí</a></li>
-		  <span>/</span>
-		  <li><a href="#experience">Experiencia</a></li>
-		  <span>/</span>
-          <li><a href="#projects">Proyectos</a></li>
-		  <span>/</span>
-          <li><a href="#contact">Contacto</a></li>
-        </ul>
-      </nav>
-    </header>
+		<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4">
+		  <div class="container-fluid d-flex justify-content-between align-items-center">
+	  
+			<!-- Logo o espacio -->
+			<div class="fw-bold"></div>
+	  
+			<!-- Botón hamburguesa y dropdown solo visible en móvil -->
+			<div class="dropdown d-lg-none">
+			  <button
+				class="navbar-toggler"
+				type="button"
+				id="dropdownMenuButton"
+				data-bs-toggle="dropdown"
+				aria-expanded="false"
+			  >
+				<span class="navbar-toggler-icon"></span>
+			  </button>
+			  <ul class="dropdown-menu dropdown-menu-end shadow" id="dropdownAnimatedMenu" aria-labelledby="dropdownMenuButton">
+				<li><a class="dropdown-item fw-bold" href="/">Inicio</a></li>
+				<li><a class="dropdown-item fw-bold" href="#skills">Skills</a></li>
+				<li><a class="dropdown-item fw-bold" href="#experience">Experiencia</a></li>
+				<li><a class="dropdown-item fw-bold" href="#projects">Proyectos</a></li>
+				<li><a class="dropdown-item fw-bold" href="#contact">Contacto</a></li>
+			  </ul>
+			</div>
+	  
+			<!-- Menú horizontal visible solo en pantallas grandes -->
+			<div class="d-none d-lg-block">
+			  <ul class="navbar-nav flex-row align-items-center">
+				<li class="nav-item"><a class="nav-link fw-bold" href="/">Inicio</a></li>
+				<li class="nav-item">/</li>
+				<li class="nav-item"><a class="nav-link fw-bold" href="#skills">Skills</a></li>
+				<li class="nav-item">/</li>
+				<li class="nav-item"><a class="nav-link fw-bold" href="#experience">Experiencia</a></li>
+				<li class="nav-item">/</li>
+				<li class="nav-item"><a class="nav-link fw-bold" href="#projects">Proyectos</a></li>
+				<li class="nav-item">/</li>
+				<li class="nav-item"><a class="nav-link fw-bold" href="#contact">Contacto</a></li>
+			  </ul>
+			</div>
+	  
+		  </div>
+		</nav>
+	</header>	  	  
 
     <main>
       <slot />
@@ -41,42 +66,53 @@ const { title = 'Mi Portafolio' } = Astro.props;
     <footer>
       <p>&copy; {new Date().getFullYear()} Tu Nombre</p>
     </footer>
-
-	<!-- Bootstrap JS Bundle (con Popper) CDN -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ENjdO4Dr2bkBIFxQpeoH644dK+g9z1HB5j6MZyc7y5P6xOVH+8ABhF5A5UrQ"
-      crossorigin="anonymous"
-      defer
-    ></script>
-
+	
     <style>
 		html, body {
 			margin: 0;
-			padding: 0;
-			font-family:Georgia, 'Times New Roman', Times, serif;
+			padding: 0;			
 			background-color: #f3f4f6;			
+		}	
+		
+		.dropdown-menu {
+			margin-top: 12px;
+			border-radius: 10px;
+			min-width: 180px;
+			right: 0;
+			left: auto; /* Asegura que se alinee a la derecha */
+			opacity: 0;
+			transform: translateY(-10px);
 		}
 
+		.dropdown-menu.show {
+			animation: slideDown 0.3s ease forwards;
+		}		
 
-		header {
-			background-color: white;			
-			padding: 0 40px;
-			box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+		@keyframes slideDown {
+			from {
+				opacity: 0;
+				transform: translateY(-10px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
 		}
 
-		nav ul {
-			display: flex;
-			gap: 1rem;
-			list-style: none;
-			padding: 25px 25px;
-			margin: 0;
-			justify-content: right;
-		}
-		nav span {
-			font-weight: bold;
+		.dropdown-menu a {
+			font-size: 16px;
+			padding: 8px 16px;
 		}
 
+		.dropdown-item:hover {
+			background-color: transparent;
+		}	
+
+		nav ul {			
+			gap: 1rem;			
+			padding: 15px 0;						
+		}
+		
 		nav a {
 			color: black;
 			text-decoration: none;			
@@ -86,7 +122,7 @@ const { title = 'Mi Portafolio' } = Astro.props;
 
 		nav a:hover {
 			color: #0d6efd;
-		}
+		}		
 
 		main {
 			padding: 2rem;
@@ -123,6 +159,8 @@ const { title = 'Mi Portafolio' } = Astro.props;
 			scrollbar-width: thin;		
 		}
     </style>
+	<BootstrapClientScript client:only="react" />
+	
   </body>
 </html>
 

@@ -1,5 +1,4 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -8,8 +7,8 @@ import Layout from '../layouts/Layout.astro';
 
 
 <Layout title="Inicio | Mi Portafolio">
-	<section>
-		<div class="section-welcome">
+	<section class="section-welcome">
+		<div class="div-welcome">
 			<div class="welcome-info">
 				<h1>Jimmy Carreño</h1>
 				<h2>Desarrollador FullStack</h2>
@@ -21,11 +20,99 @@ import Layout from '../layouts/Layout.astro';
 				<img src="/public/images/welcome-desarrollo.png" alt="">
 			</picture>
 		</div>
-	</section>	
+	</section>
+
+	<section class="section-skills">
+		<div class="container">
+		  <h2 class="text-center mb-4">Skills</h2>
+		  <div class="row justify-content-center">
+			
+			<div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 d-flex justify-content-center">
+			  <div class="skill-item">
+				<img src="icons/html.png" alt="HTML" loading="lazy" />
+				<p>HTML</p>
+			  </div>
+			</div>
+	  
+			<div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 d-flex justify-content-center">
+			  <div class="skill-item">
+				<img src="icons/css.png" alt="CSS" loading="lazy" />
+				<p>CSS</p>
+			  </div>
+			</div>
+	  
+			<div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 d-flex justify-content-center">
+			  <div class="skill-item">
+				<img src="icons/javascript.png" alt="JavaScript" loading="lazy" />
+				<p>JavaScript</p>
+			  </div>
+			</div>
+	  
+			<div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 d-flex justify-content-center">
+			  <div class="skill-item">
+				<img src="icons/bootstrap.png" alt="Bootstrap" loading="lazy" />
+				<p>Bootstrap</p>
+			  </div>
+			</div>
+	  
+			<div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 d-flex justify-content-center">
+			  <div class="skill-item">
+				<img src="icons/csharp.png" alt="C#" loading="lazy" />
+				<p>C#</p>
+			  </div>
+			</div>
+	  
+			<div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 d-flex justify-content-center">
+			  <div class="skill-item">
+				<img src="icons/net-core.png" alt=".NET" loading="lazy" />
+				<p>.NET</p>
+			  </div>
+			</div>
+	  			
+	  
+			<div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 d-flex justify-content-center">
+			  <div class="skill-item">
+				<img src="icons/azure.png" alt="Azure" loading="lazy" />
+				<p>Azure</p>
+			  </div>
+			</div>
+	  
+			<div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 d-flex justify-content-center">
+			  <div class="skill-item">
+				<img src="icons/api.png" alt="APIs" loading="lazy" />
+				<p>APIs</p>
+			  </div>
+			</div>
+	  				  			
+			<div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 d-flex justify-content-center">
+			  <div class="skill-item">
+				<img src="icons/sql.png" alt="SQL" loading="lazy" />
+				<p>SQL</p>
+			  </div>
+			</div>	  						
+	  			
+			<div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 d-flex justify-content-center">
+			  <div class="skill-item">
+				<img src="icons/docker.png" alt="Docker" loading="lazy" />
+				<p>Docker</p>
+			  </div>
+			</div>	
+			
+			<div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 d-flex justify-content-center">
+				<div class="skill-item">
+				  <img src="icons/python.png" alt="Python" loading="lazy" />
+				  <p>Python</p>
+				</div>
+			  </div>
+	  
+		  </div>
+		</div>
+	</section>
+	  
 </Layout>
 
 <style>
-	.section-welcome {
+	.div-welcome {
 		min-height: calc(100vh - 135px);
 		display: flex;
 		align-items: center;
@@ -34,16 +121,16 @@ import Layout from '../layouts/Layout.astro';
 		padding: 0 40px;		
 	}
 
-	.section-welcome h1 {
+	.div-welcome h1 {
 		font-size: 2rem;
 		color: black;
 	}
 
-	.section-welcome h2 {
+	.div-welcome h2 {
 		color: #0d6efd;
 	}
 
-	.section-welcome a {
+	.div-welcome a {
 		color: black;
 		text-decoration: none;
 		background-color: transparent;
@@ -53,7 +140,7 @@ import Layout from '../layouts/Layout.astro';
 		transition: background-color 0.4s ease;
 	}
 
-	.section-welcome a:hover {
+	.div-welcome a:hover {
 		background-color: #0d6efd;
 		cursor: pointer;
 	}
@@ -66,4 +153,73 @@ import Layout from '../layouts/Layout.astro';
 		align-items: center;
 		width: 400px;		
 	}	
+
+
+
+
+
+
+
+
+
+
+
+	.section-skills {
+		/* Ajusta el padding y el color de fondo a tu gusto */
+		padding: 2rem;
+		/* background-color: #000; por ejemplo, negro */
+		color: #fff;
+	}
+
+	.section-skills h2 {
+		margin-bottom: 2rem;
+		color:#0d6efd;
+		font-weight: bold;
+	}
+
+	/* Forma hexagonal */
+	.skill-item {
+		width: 120px;      /* Ajusta el tamaño del hexágono */
+		height: 120px;
+		background: #333;  /* Color de fondo del hexágono */
+		
+	
+		/* Clip-path para el hexágono */
+		clip-path: polygon(
+			50% 0%,
+			93% 25%,
+			93% 75%,
+			50% 100%,
+			7% 75%,
+			7% 25%
+		);
+
+		/* Centrar icono y texto dentro */
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		
+		/* Animación suave al hacer hover */
+		transition: transform 0.3s;
+	}
+
+	.skill-item:hover {
+		transform: scale(1.1);
+		box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+	}
+
+	/* Iconos dentro del hexágono */
+	.skill-item img {
+		width: 40px;   /* Ajusta a tu gusto */
+		height: 40px;
+		margin-bottom: 0.5rem;
+	}
+
+		/* Texto dentro del hexágono */
+	.skill-item p {
+		margin: 0;
+		font-size: 0.9rem;
+		font-weight: bold;
+	}
 </style>
