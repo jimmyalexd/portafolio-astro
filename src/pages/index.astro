@@ -7,22 +7,63 @@ import Layout from '../layouts/Layout.astro';
 
 
 <Layout title="Inicio | Mi Portafolio">
-	<section class="section-welcome">
-		<div class="div-welcome">
-			<div class="welcome-info">
-				<h1>Jimmy Carreño</h1>
-				<h2>Desarrollador FullStack</h2>
-				<a href="/cv/Jimmy-Carreno-CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary">
-					Ver CV
-				  </a>
+	<section id="welcome" class="section-welcome">
+		<div class="container">
+			<div class="div-welcome">
+				<div class="welcome-info">
+					<h1>Desarrollador FullStack</h1>
+					<h2>Jimmy Carreño</h2>
+					<a href="/cv/Jimmy-Carreno-CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary">
+						Ver CV
+					  </a>
+				</div>				
 			</div>
-			<picture>
-				<img src="/public/images/welcome-desarrollo.png" alt="">
-			</picture>
 		</div>
 	</section>
 
-	<section class="section-skills">
+	<section id="experience" class="section-experience">
+		<div class="container">
+			<h2>Where I've Worked</h2>
+	  
+		<div class="experience-container">
+		  <!-- Columna izquierda: Lista de experiencias -->
+		  <nav class="experience-nav">
+			<ul>
+			  <li class="active" data-experience="puntonet">Puntonet</li>
+			  <li data-experience="arktech">Arktech</li>			  
+			</ul>
+		  </nav>
+	  
+		  <!-- Columna derecha: Detalles de cada experiencia -->
+		  <div class="experience-details">
+	  			
+			<div class="experience-content active" id="puntonet">
+			  <h3>Desarrollador FullStack - Remoto</h3>
+			  <p class="date-range">Septiembre 2023 - Actualidad</p>
+			  <ul>
+				<li>Promoted IMUN Online Conferences in different schools/universities and got 10+ registrations.</li>
+				<li>Informed how MUNs enhance - Negotiation, Diplomacy, Leadership, etc.</li>
+				<li>Achieved Brand Ambassador title for increasing sales by 10% and creating brand presence.</li>
+				<li><a href="#" target="_blank">View OFFER LETTER</a></li>
+			  </ul>
+			</div>
+	  			
+			<div class="experience-content" id="arktech">
+			  <h3>Ingeniero de Software - Remoto</h3>
+			  <p class="date-range">Enero 2023 - Marzo 2023</p>
+			  <ul>
+				<li>Describe your main responsibilities or achievements here.</li>
+				<li>Highlight key skills or tools used.</li>
+				<li>Explain the impact of your work.</li>
+			  </ul>
+			</div>	  			
+	  
+		  </div> <!-- .experience-details -->
+		</div> <!-- .experience-container -->
+		</div>
+	</section>
+
+	<section id="skills" class="section-skills">
 		<div class="container">
 		  <h2 class="text-center mb-4">Skills</h2>
 		  <div class="row justify-content-center">
@@ -112,50 +153,177 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
+	section {
+		width: 100%;
+  		padding: 4rem 0;
+	}
+
+	section:nth-of-type(odd) {
+		background-color: var(--body-bg);
+		color: var(--text-default); /* Ajusta si quieres texto blanco */
+	}
+
+	section:nth-of-type(even) {
+		background-color: var(--body-bg-secondary);
+		color:var(--text-default);
+	}
+
+	.container {
+		max-width: 1000px;
+		margin: 0 auto;    /* centra horizontalmente */
+		padding: 0 2rem;   /* margen lateral si quieres */
+	}
+
 	.div-welcome {
-		min-height: calc(100vh - 135px);
+		height: 40vh;
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
-		color: white;	
-		padding: 0 40px;		
+		justify-content: center;
+		color: var(--text-default);	
+		padding: 0 40px;	
+		text-align: center;	
 	}
 
 	.div-welcome h1 {
-		font-size: 2rem;
-		color: black;
+		font-size: 3rem;
+		color: var(--text-blue);
 	}
 
 	.div-welcome h2 {
-		color: #0d6efd;
+		font-size: 4rem;
+		color: var(--text-default);
 	}
 
 	.div-welcome a {
-		color: black;
+		margin-top: 20px;
+		color: var(--text-blue);
 		text-decoration: none;
 		background-color: transparent;
-		border: 1px solid #0d6efd;
-		border-radius: 24px;
-		padding: 8px;
+		border: 2px solid var(--text-blue);
+		border-radius: 20px;
+		padding: 5px 15px;
+		font-size: 20px;
 		transition: background-color 0.4s ease;
 	}
 
 	.div-welcome a:hover {
-		background-color: #0d6efd;
+		background-color: var(--text-blue-secondary);
 		cursor: pointer;
 	}
 
 	welcome-info {
+		text-align: center;
 		align-items: center;
 	}
 
-	picture img {
-		align-items: center;
-		width: 400px;		
-	}	
+		
 
 
 
+
+
+
+
+
+
+
+
+
+
+	.section-experience {
+		padding: 8rem 1rem;		
+	}
+
+	.section-experience h2 {
+	text-align: left; 
+	margin-bottom: 2rem;
+	font-size: 1.5rem;
+	color: var(--text-default); /* Ajusta según tu estilo */
+	}
+
+	.experience-container {
+	display: flex;
+	flex-direction: row;
+	gap: 2rem; /* Separación entre columnas */
+	}
+
+	/* Columna izquierda: la lista de experiencias */
+	.experience-nav {
+	flex: 1; /* Controla el espacio de la columna izquierda */
+	max-width: 200px; /* O el ancho que prefieras */
+	}
+
+	.experience-nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	}
+
+	.experience-nav li {
+	cursor: pointer;
+	padding: 0.75rem 1rem;
+	border-left: 2px solid transparent;
+	transition: all 0.2s;
+	color: var(--text-default);
+	}
+
+	.experience-nav li:hover {
+	background-color: var(--text-blue-secondary);
+	}
+
+	.experience-nav li.active {
+	border-left: 4px solid var(--text-blue); /* Color destacado */
+	color: var(--text-blue);
+	font-weight: bold;
+	background-color: transparent;
+	}
+
+	/* Columna derecha: detalles de la experiencia */
+	.experience-details {
+	flex: 3; /* Ocupa el resto del espacio */
+	}
+
+	/* Ocultamos todas las secciones excepto la activa */
+	.experience-content {
+	display: none;
+	}
+
+	.experience-content.active {
+	display: block;
+	}
+
+	.experience-content h3 {
+	margin: 0 0 0.5rem;
+	color: var(--text-default);
+	font-size: 1.2rem;
+	}
+
+	.experience-content .date-range {
+	margin-bottom: 1rem;
+	font-style: italic;
+	color: var(--text-default);
+	}
+
+	.experience-content ul {
+	margin: 0;
+	padding-left: 1.2rem;
+	color: var(--text-default);
+	}
+
+	.experience-content ul li {
+	margin-bottom: 0.5rem;
+	}
+
+	@media (max-width: 768px) {
+		.experience-container {
+			flex-direction: column;
+		}
+		
+		.experience-nav {
+			max-width: 100%;
+			margin-bottom: 1rem;
+		}
+	}
 
 
 
@@ -168,12 +336,12 @@ import Layout from '../layouts/Layout.astro';
 		/* Ajusta el padding y el color de fondo a tu gusto */
 		padding: 2rem;
 		/* background-color: #000; por ejemplo, negro */
-		color: #fff;
+		color: var(--text-default);
 	}
 
 	.section-skills h2 {
 		margin-bottom: 2rem;
-		color:#0d6efd;
+		color: var(--text-blue);
 		font-weight: bold;
 	}
 
@@ -181,7 +349,7 @@ import Layout from '../layouts/Layout.astro';
 	.skill-item {
 		width: 120px;      /* Ajusta el tamaño del hexágono */
 		height: 120px;
-		background: #333;  /* Color de fondo del hexágono */
+		background: var(--bg-simple);  /* Color de fondo del hexágono */
 		
 	
 		/* Clip-path para el hexágono */
@@ -221,5 +389,33 @@ import Layout from '../layouts/Layout.astro';
 		margin: 0;
 		font-size: 0.9rem;
 		font-weight: bold;
+		cursor: default;
 	}
 </style>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const navItems = document.querySelectorAll('.experience-nav li');
+		const contents = document.querySelectorAll('.experience-content');
+  
+		navItems.forEach(item => {
+			item.addEventListener('click', () => {
+				// 1. Quitar la clase 'active' de todos los navItems
+				navItems.forEach(i => i.classList.remove('active'));
+				// 2. Añadir 'active' al item actual
+				item.classList.add('active');
+		
+				// 3. Ocultar todos los contenidos
+				contents.forEach(content => content.classList.remove('active'));
+		
+				// 4. Mostrar el contenido que coincide con el data-experience
+				const experienceId = item.getAttribute('data-experience');
+				const targetContent = document.getElementById(experienceId);
+				if (targetContent) {
+					targetContent.classList.add('active');
+				}
+				});
+			});
+		});		
+
+</script>

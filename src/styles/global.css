@@ -1,1 +1,33 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
+
+:root {
+    /* Modo oscuro (por defecto) */
+    --body-bg: #1d1d24;
+    --body-bg-secondary: #26262F;
+    --bg-simple: #333;
+    --header-bg: #1d1d24;
+    --header-bg-scrolled: #25252c;
+    --text-default: #fff;
+    --text-blue: #0d6efd;
+    --text-blue-secondary: #172a45;
+    --nav-hover-color: #0d6efd;
+    --dropdown-bg: #172a45;
+    --footer-bg: #1d1d24;
+    --footer-text-color: #000;
+  }
+  
+  /* Modo claro */
+  :root.light-mode {
+    --body-bg: #f7f7f7;
+    --body-bg-secondary: #ececff;
+    --bg-simple: #999;
+    --header-bg: #fafafa;
+    --header-bg-scrolled: #eaeaea;
+    --text-default: #000;
+    --text-blue: #0d6efd;
+    --text-blue-secondary: #8fadd6;
+    --nav-hover-color: #0d6efd;
+    --dropdown-bg: #ffffff;
+    --footer-bg: #fafafa;
+    --footer-text-color: #333;
+  }
