@@ -8,26 +8,50 @@
     --header-bg: #1d1d24;
     --header-bg-scrolled: #25252c;
     --text-default: #fff;
-    --text-blue: #0d6efd;
+    --text-default-secondary: #E0E0E0;
+    --text-blue: #3390ff;
     --text-blue-secondary: #172a45;
-    --nav-hover-color: #0d6efd;
+    --nav-hover-color: #3390ff;
     --dropdown-bg: #172a45;
-    --footer-bg: #1d1d24;
+    --footer-bg: #101014;
     --footer-text-color: #000;
   }
   
   /* Modo claro */
   :root.light-mode {
     --body-bg: #f7f7f7;
-    --body-bg-secondary: #ececff;
+    --body-bg-secondary: #f1f1f1;
     --bg-simple: #999;
     --header-bg: #fafafa;
     --header-bg-scrolled: #eaeaea;
     --text-default: #000;
-    --text-blue: #0d6efd;
-    --text-blue-secondary: #8fadd6;
-    --nav-hover-color: #0d6efd;
+    --text-default-secondary: #121212;
+    --text-blue: #3390ff;
+    --text-blue-secondary: #3390ff;
+    --nav-hover-color: #3390ff;
     --dropdown-bg: #ffffff;
-    --footer-bg: #fafafa;
+    --footer-bg: #e4e4e4;
     --footer-text-color: #333;
   }
+
+  .btn-outline-primary {
+    margin-top: 20px;
+    color: var(--text-blue);
+    text-decoration: none;
+    background-color: transparent;
+    border: 2px solid var(--text-blue);
+    border-radius: 20px !important;
+    padding: 5px 15px;    
+    transition: background-color 0.4s ease;
+  }
+
+.btn-outline-primary:hover {
+  background-color: var(--text-blue-secondary) !important;
+  cursor: pointer;
+  color: var(--text-blue);
+}
+
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+  color: var(--text-blue) !important;
+  background-color: var(--text-blue-secondary);
+}

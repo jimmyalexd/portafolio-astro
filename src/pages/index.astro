@@ -1,6 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+import { Image } from 'astro:assets';
+import himimiImg from '/Users/Harumiss/Desktop/astro/dev-portfolio/public/images/hi-mimi.png';
+
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -13,59 +16,65 @@ import Layout from '../layouts/Layout.astro';
 				<div class="welcome-info">
 					<h1>Desarrollador FullStack</h1>
 					<h2>Jimmy Carreño</h2>
-					<a href="/cv/Jimmy-Carreno-CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary">
+					<a href="https://drive.google.com/file/d/1k0-idhc1MUqQlfALX4tKQj3hZDyCWPDe/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary">
 						Ver CV
-					  </a>
-				</div>				
+					</a>
+				</div>	
+				<div class="welcome-social">
+
+				</div>			
 			</div>
 		</div>
 	</section>
 
 	<section id="experience" class="section-experience">
 		<div class="container">
-			<h2>Where I've Worked</h2>
+			<h2 class="text-center mb-4">Experiencia</h2>
 	  
-		<div class="experience-container">
-		  <!-- Columna izquierda: Lista de experiencias -->
-		  <nav class="experience-nav">
-			<ul>
-			  <li class="active" data-experience="puntonet">Puntonet</li>
-			  <li data-experience="arktech">Arktech</li>			  
-			</ul>
-		  </nav>
-	  
-		  <!-- Columna derecha: Detalles de cada experiencia -->
-		  <div class="experience-details">
-	  			
-			<div class="experience-content active" id="puntonet">
-			  <h3>Desarrollador FullStack - Remoto</h3>
-			  <p class="date-range">Septiembre 2023 - Actualidad</p>
-			  <ul>
-				<li>Promoted IMUN Online Conferences in different schools/universities and got 10+ registrations.</li>
-				<li>Informed how MUNs enhance - Negotiation, Diplomacy, Leadership, etc.</li>
-				<li>Achieved Brand Ambassador title for increasing sales by 10% and creating brand presence.</li>
-				<li><a href="#" target="_blank">View OFFER LETTER</a></li>
-			  </ul>
+			<div class="experience-container">
+				<!-- Columna izquierda: Lista de experiencias -->
+				<nav class="experience-nav">
+					<ul>
+					<li class="active" data-experience="puntonet">Puntonet</li>
+					<li data-experience="arktech">Arktech</li>			  
+					</ul>
+				</nav>
+			
+				<!-- Columna derecha: Detalles de cada experiencia -->
+				<div class="experience-details">
+						
+					<div class="experience-content active" id="puntonet">
+					<h3>Desarrollador FullStack - Remoto</h3>
+					<p class="date-range">Septiembre 2023 - Actualidad</p>
+					<ul>
+						<li>Desarrollo y mantenimiento de una nueva plataforma web para correos masivos usando <strong>C#, ASP.NET, Entity Framework</strong> y <strong>SQL Server</strong>.</li>
+						<li>Implementación de <strong>microservicios</strong> y <strong>APIs</strong> internas/externas, integrando procesos con <strong>Azure Functions, Storage, App Services, Containers</strong> y <strong>Queues</strong>.</li>
+						<li>Diseño de interfaces interactivas con <strong>HTML, CSS</strong> y <strong>JavaScript</strong>, optimizando la experiencia de usuario.</li>
+						<li>Soporte continuo al sistema de correos masivos existente, aplicando mejoras y nuevas funcionalidades.</li>
+						<li>Desarrollo de soluciones personalizadas para clientes externos y mantenimiento de sitios públicos.</li>
+						<li>Trabajo colaborativo con metodología <strong>Scrum</strong>, gestionando tareas con <strong>Jira</strong>.</li>
+					</ul>
+					</div>
+						
+					<div class="experience-content" id="arktech">
+					<h3>Ingeniero de Software - Remoto</h3>
+					<p class="date-range">Enero 2023 - Marzo 2023</p>
+					<ul>
+						<li>Participación en el desarrollo backend de sistemas web utilizando <strong>Python</strong> con los frameworks <strong>Flask</strong> y <strong>Django</strong>.</li>
+						<li>Creación y consumo de <strong>APIs REST</strong>, integrando distintos servicios y funcionalidades.</li>
+						<li>Manejo de bases de datos <strong>PostgreSQL</strong>, incluyendo modelado, consultas y mantenimiento.</li>
+						<li>Colaboración en proyectos de mejora y mantemimiento de sistemas existentes, aplicando buenas prácticas de desarrollo de software.</li>
+					</ul>
+					</div>	  			
+			
+				</div>
 			</div>
-	  			
-			<div class="experience-content" id="arktech">
-			  <h3>Ingeniero de Software - Remoto</h3>
-			  <p class="date-range">Enero 2023 - Marzo 2023</p>
-			  <ul>
-				<li>Describe your main responsibilities or achievements here.</li>
-				<li>Highlight key skills or tools used.</li>
-				<li>Explain the impact of your work.</li>
-			  </ul>
-			</div>	  			
-	  
-		  </div> <!-- .experience-details -->
-		</div> <!-- .experience-container -->
 		</div>
 	</section>
 
 	<section id="skills" class="section-skills">
 		<div class="container">
-		  <h2 class="text-center mb-4">Skills</h2>
+		  <h2 class="text-center mb-4">Habilidades</h2>
 		  <div class="row justify-content-center">
 			
 			<div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 d-flex justify-content-center">
@@ -149,13 +158,62 @@ import Layout from '../layouts/Layout.astro';
 		  </div>
 		</div>
 	</section>
+
+	<section id="projects" class="section-projects">
+		<div class="container">
+			<h2 class="text-center mb-4">Proyectos</h2>
+			<div class="projects-info">
+				<div class="project-card">
+				  <div class="project-image">					
+					<Image src={himimiImg} alt="Mi proyecto" width={800} />
+				  </div>
+				  <div class="project-description">
+					<h3>Hi mimi</h3>
+					<p>
+						Sitio web desarrollado en ASP.NET 8 que funciona como catálogo de productos de maquillaje, permitiendo a los usuarios explorar diferentes artículos con un diseño limpio y responsive.
+						<br><br>
+						Incluye secciones como “Sobre mí”, “Contacto” y un formulario de consultas. Además, cuenta con un botón de acceso directo a WhatsApp para facilitar la compra directa.
+						<br><br>
+						El proyecto fue diseñado con visión a futuro: se planifica la integración de login para administrador, gestión de productos mediante base de datos, y funcionalidades de e-commerce como compras en línea y pagos integrados.
+					</p>
+					<a href="https://himimi.cl" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary">Ver más</a>
+				  </div>
+				</div>
+			  </div>
+		</div>
+	</section>
+
+	<section id="contact" class="section-contact">
+		<div class="container contact-wrapper">
+		  <div class="contact-info">
+			<p><strong>Email:</strong> <a href="mailto:jimmyc.sanchez.22@gmail.com">jimmyc.sanchez.22@gmail.com</a></p>
+			<p><strong>Ubicación:</strong> Rancagua, Chile</p>
+			<p><strong>Disponibilidad:</strong> Remoto · freelance</p>
+			<div class="contact-social">
+			  <a href="https://www.linkedin.com/in/jimmyalexd" target="_blank">
+				<img src="/public/icons/linkedin.png" alt="LinkedIn" loading="lazy" width="48" height="48">
+			  </a>
+			</div>
+		  </div>
+	  
+		  <div class="contact-image">
+			<img src="/public/images/barbilla-roja.png" alt="Contacto ilustración" width="300" loading="lazy">
+		  </div>
+		</div>
+	  </section>
 	  
 </Layout>
 
 <style>
 	section {
 		width: 100%;
-  		padding: 4rem 0;
+  		padding: 3rem;
+	}
+
+	section h2 {
+		margin-bottom: 2rem;
+		color: var(--text-blue);
+		font-weight: bold;
 	}
 
 	section:nth-of-type(odd) {
@@ -175,7 +233,7 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	.div-welcome {
-		height: 40vh;
+		height: 60vh;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -185,7 +243,7 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	.div-welcome h1 {
-		font-size: 3rem;
+		font-size: 4rem;
 		color: var(--text-blue);
 	}
 
@@ -195,21 +253,10 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	.div-welcome a {
-		margin-top: 20px;
-		color: var(--text-blue);
-		text-decoration: none;
-		background-color: transparent;
-		border: 2px solid var(--text-blue);
-		border-radius: 20px;
-		padding: 5px 15px;
-		font-size: 20px;
-		transition: background-color 0.4s ease;
+		font-size: 24px;
 	}
 
-	.div-welcome a:hover {
-		background-color: var(--text-blue-secondary);
-		cursor: pointer;
-	}
+	
 
 	welcome-info {
 		text-align: center;
@@ -223,95 +270,85 @@ import Layout from '../layouts/Layout.astro';
 
 
 
-
-
-
-
-
-
-
-	.section-experience {
-		padding: 8rem 1rem;		
-	}
-
-	.section-experience h2 {
-	text-align: left; 
-	margin-bottom: 2rem;
-	font-size: 1.5rem;
-	color: var(--text-default); /* Ajusta según tu estilo */
-	}
+	
 
 	.experience-container {
-	display: flex;
-	flex-direction: row;
-	gap: 2rem; /* Separación entre columnas */
+		display: flex;
+		flex-direction: row;
+		gap: 2rem; /* Separación entre columnas */
 	}
 
 	/* Columna izquierda: la lista de experiencias */
 	.experience-nav {
-	flex: 1; /* Controla el espacio de la columna izquierda */
-	max-width: 200px; /* O el ancho que prefieras */
+		flex: 1; /* Controla el espacio de la columna izquierda */
+		max-width: 200px; /* O el ancho que prefieras */
 	}
 
 	.experience-nav ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
+		list-style: none;
+		padding: 0;
+		margin: 0;
 	}
 
 	.experience-nav li {
-	cursor: pointer;
-	padding: 0.75rem 1rem;
-	border-left: 2px solid transparent;
-	transition: all 0.2s;
-	color: var(--text-default);
+		cursor: pointer;
+		padding: 0.75rem 1rem;
+		border-left: 2px solid transparent;
+		transition: all 0.3s;
+		color: var(--text-default);
 	}
 
 	.experience-nav li:hover {
-	background-color: var(--text-blue-secondary);
+		background-color: var(--text-blue-secondary);
 	}
 
 	.experience-nav li.active {
-	border-left: 4px solid var(--text-blue); /* Color destacado */
-	color: var(--text-blue);
-	font-weight: bold;
-	background-color: transparent;
+		border-left: 4px solid var(--text-blue); /* Color destacado */
+		color: var(--text-blue);
+		font-weight: bold;
+		background-color: transparent;
 	}
 
 	/* Columna derecha: detalles de la experiencia */
 	.experience-details {
-	flex: 3; /* Ocupa el resto del espacio */
+		flex: 3; /* Ocupa el resto del espacio */
 	}
 
 	/* Ocultamos todas las secciones excepto la activa */
 	.experience-content {
-	display: none;
+		display: none;
+	}
+
+	.experience-content strong {
+		color: var(--text-blue)
 	}
 
 	.experience-content.active {
-	display: block;
+		display: block;
 	}
 
 	.experience-content h3 {
-	margin: 0 0 0.5rem;
-	color: var(--text-default);
-	font-size: 1.2rem;
+		margin: 0 0 0.5rem;
+		color: var(--text-default);
+		font-size: 1.2rem;
 	}
 
 	.experience-content .date-range {
-	margin-bottom: 1rem;
-	font-style: italic;
-	color: var(--text-default);
+		margin-bottom: 1rem;
+		font-style: italic;
+		color: var(--text-default);
 	}
 
 	.experience-content ul {
-	margin: 0;
-	padding-left: 1.2rem;
-	color: var(--text-default);
+		margin: 0;
+		padding-left: 1.2rem;
+		color: var(--text-default);
+		line-height: 2rem;
 	}
 
 	.experience-content ul li {
-	margin-bottom: 0.5rem;
+		margin-bottom: 0.5rem;
+		color: var(--text-default-secondary);
 	}
 
 	@media (max-width: 768px) {
@@ -325,31 +362,36 @@ import Layout from '../layouts/Layout.astro';
 		}
 	}
 
+	/* Animación de entrada */
+	@keyframes fadeSlideIn {
+		from {
+			opacity: 0;
+			transform: translateY(10px); /* efecto de subida */
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
 
-
+	.experience-content.animate-in {
+		animation: fadeSlideIn 0.4s ease-out;
+	}
 
 
 
 
 
 	.section-skills {
-		/* Ajusta el padding y el color de fondo a tu gusto */
-		padding: 2rem;
-		/* background-color: #000; por ejemplo, negro */
+		
 		color: var(--text-default);
-	}
-
-	.section-skills h2 {
-		margin-bottom: 2rem;
-		color: var(--text-blue);
-		font-weight: bold;
-	}
+	}	
 
 	/* Forma hexagonal */
 	.skill-item {
 		width: 120px;      /* Ajusta el tamaño del hexágono */
 		height: 120px;
-		background: var(--bg-simple);  /* Color de fondo del hexágono */
+		background: var(--text-blue-secondary);  /* Color de fondo del hexágono */
 		
 	
 		/* Clip-path para el hexágono */
@@ -391,31 +433,183 @@ import Layout from '../layouts/Layout.astro';
 		font-weight: bold;
 		cursor: default;
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	.project-card {
+		display: flex;
+		gap: 2rem;
+		align-items: center;
+		margin-bottom: 2rem;
+		border: 1px solid #ddd;
+		border-radius: 12px;
+		padding: 1.5rem;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+		background-color: transparent;
+		flex-wrap: wrap; /* Para móviles */
+	}
+
+	.project-image img {
+		max-width: 450px;
+		width: 100%;
+		height: auto;
+		border-radius: 10px;
+	}
+
+	.project-description {
+		flex: 1;
+	}
+
+	.project-description h3 {
+		margin-top: 0;
+		font-size: 1.6rem;
+	}
+
+	.project-description p {
+		margin: 1rem 0;
+		line-height: 1.6;
+		color: var(--text-default);
+	}
+
+	.project-description a:hover {
+		background-color: #0056b3;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	.div-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: center;
+}
+
+.contact-info {
+  flex: 1;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.contact-social {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.contact-social img {
+  transition: transform 0.3s ease;
+}
+
+.contact-social img:hover {
+  transform: scale(1.1);
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 280px;
+}
+
+.contact-social {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.contact-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
 </style>
 
 <script>
+	// Animaciones en "Experiencia"
 	document.addEventListener('DOMContentLoaded', () => {
 		const navItems = document.querySelectorAll('.experience-nav li');
 		const contents = document.querySelectorAll('.experience-content');
-  
+
 		navItems.forEach(item => {
 			item.addEventListener('click', () => {
-				// 1. Quitar la clase 'active' de todos los navItems
+				// Quitar clase 'active' de todos los navItems
 				navItems.forEach(i => i.classList.remove('active'));
-				// 2. Añadir 'active' al item actual
 				item.classList.add('active');
-		
-				// 3. Ocultar todos los contenidos
-				contents.forEach(content => content.classList.remove('active'));
-		
-				// 4. Mostrar el contenido que coincide con el data-experience
+
+				// Ocultar todos los contenidos y quitar animación
+				contents.forEach(content => {
+					content.classList.remove('active', 'animate-in');
+				});
+
+				// Mostrar el contenido correspondiente con animación
 				const experienceId = item.getAttribute('data-experience');
 				const targetContent = document.getElementById(experienceId);
 				if (targetContent) {
 					targetContent.classList.add('active');
+
+					// Forzar reflow para reiniciar la animación (truco)
+					void targetContent.offsetWidth;
+
+					// Agregar clase de animación
+					targetContent.classList.add('animate-in');
 				}
-				});
 			});
-		});		
+		});
+	});		
 
 </script>
